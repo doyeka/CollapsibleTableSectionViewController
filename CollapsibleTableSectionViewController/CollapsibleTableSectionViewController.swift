@@ -122,10 +122,9 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
         
         let title = delegate?.collapsibleTableView?(tableView, titleForHeaderInSection: section) ?? ""
         
-        header.titleLabel.text = title
-        header.arrowLabel.text = ">"
+        header.titleLabel.attributedText = NSMutableAttributedString(string: title, attributes: [.font: UIFont.systemFont(ofSize: 12, weight: .semibold)])
+        header.arrowLabel.attributedText = NSMutableAttributedString(string: ">", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .thin)])
         header.setCollapsed(isSectionCollapsed(section))
-        
         header.section = section
         header.delegate = self
         

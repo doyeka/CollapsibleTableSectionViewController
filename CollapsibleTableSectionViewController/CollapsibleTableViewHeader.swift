@@ -23,28 +23,27 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
-        // Content View
-        contentView.backgroundColor = UIColor(hex: 0x2E3944)
-        
         let marginGuide = contentView.layoutMarginsGuide
         
         // Arrow label
         contentView.addSubview(arrowLabel)
-        arrowLabel.textColor = UIColor.white
+        arrowLabel.textColor = UIColor.black
         arrowLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
         arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
-        arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+//        arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+        arrowLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         arrowLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         
         // Title label
         contentView.addSubview(titleLabel)
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor.black
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
+//        titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 16).isActive = true
         
         //
         // Call tapHeader when tapping on this header
